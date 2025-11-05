@@ -11,7 +11,10 @@ const taskSlice = createSlice({
       state.task.push(task)
     },
 
-    removeTask: () => {},
+    removeTask: (state,action) => {
+     const removeTaskId = action.payload
+     state.task = state.task.filter(task => task.id !== removeTaskId)
+    },
   }
 });
 

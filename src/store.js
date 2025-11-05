@@ -12,7 +12,7 @@ const persistedReducer = persistReducer(persistConfig, taskReducer)
 
 export const store = configureStore({
   reducer: {
-    state: persistedReducer,
+    alredyAddedTask : persistedReducer,
   },
 });
 

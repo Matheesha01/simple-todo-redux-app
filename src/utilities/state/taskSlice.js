@@ -7,8 +7,12 @@ const taskSlice = createSlice({
   },
   reducers: {
     storeTask: (state,action) => {
-      const task = {id:nanoid(), task:action.payload}
-      state.task.push(task)
+      if (action.payload === ''){
+        alert("Write your task")
+      }else{
+        const task = {id:nanoid(), task:action.payload}
+        state.task.push(task)
+      }
     },
 
     removeTask: (state,action) => {
